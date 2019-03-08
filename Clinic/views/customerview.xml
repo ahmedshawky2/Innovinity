@@ -8,7 +8,7 @@
             <attribute name="attrs">{"required": [["customer","=",True]]}</attribute>
         </xpath>
         <xpath expr="//field[@name='category_id']" position="after">
-          <field name="x_child_name" string="ChildName"/>
+          <field name="x_child_name" string="Child/Sub Name"/>
         </xpath>
       </data>
     </field>
