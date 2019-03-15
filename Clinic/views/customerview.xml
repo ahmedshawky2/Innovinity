@@ -11,7 +11,9 @@
           <field name="x_child_name" string="Child/Sub Name"/>
         </xpath>
 
-    
+        <xpath expr="//field[@name='vat']" position="after">
+          <field name="x_cr"/>
+        </xpath>
       </data>
     </field>
     <field name="field_parent" eval="False"/>
