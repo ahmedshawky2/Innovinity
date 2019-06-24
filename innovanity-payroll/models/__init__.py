@@ -2,3 +2,6 @@
 
 #from . import models
 from . import payroll
+from . import hr
+from . import contract
+from . import payslip
