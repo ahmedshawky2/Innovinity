@@ -163,3 +163,23 @@ class taxation(models.Model):
         result = 0.0
         result = (basic_salary * 0.40) * -1
         return result
+
+    @api.multi
+    def sum_inputs_codes(self, payslip_id, code, contract_id):
+
+        _logger.debug('self.id maged ! "%s"' % (str(payslip_id)))
+        _logger.debug('code maged ! "%s"' % (str(code)))
+        _logger.debug('contract_id maged ! "%s"' % (str(contract_id)))
+
+        inputs = self.env['hr.payslip.input'].search([('payslip_id','=',payslip_id)])
+        _logger.debug('inputs maged ! "%s"' % (str(inputs)))
+
+        result = 0.0
+
+        for input in inputs:
+            if input[0]['code'] == code and int(input[0]['contract_id']) == contract_id:
+                result = result + input[0]['amount']
+
+        _logger.debug('result maged ! "%s"' % (str(result)))
+
+        return result
